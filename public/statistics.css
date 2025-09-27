@@ -1,0 +1,146 @@
+/* =========================================================
+   Statistics Page Styles (RTL)
+   - متوافق مع متغيرات ألوانك ومع theme.css (Light/Dark)
+   - يشمل: بطاقات الرسم، الأزرار، اللِيجند، الجداول، القوائم
+   ========================================================= */
+
+/* ---------- Helpers / Variables bridge ---------- */
+:root{
+  --stat-surface: var(--surface, #fff);
+  --stat-text: var(--text, #111827);
+  --stat-muted: var(--muted, #6b7280);
+  --stat-border: var(--border, #e5e7eb);
+  --stat-shadow: var(--shadow, 0 6px 20px rgba(17,24,39,.08));
+  --stat-brand: var(--brand, #00A07D);
+  --stat-brand-2: var(--brand-2, #B0EB81);
+}
+
+/* ---------- Page Shell ---------- */
+.stats-page .hero{
+  border-inline-start: 6px solid var(--stat-brand);
+  background: var(--stat-surface);
+  border: 1px solid var(--stat-border);
+  box-shadow: var(--stat-shadow);
+  border-radius: 14px;
+  padding: 2rem 1.2rem;
+  margin-top: 1rem;
+}
+.stats-page .hero h1{
+  color: var(--stat-brand);
+  margin: 0 0 .6rem;
+}
+.stats-page .lead{
+  color: var(--stat-muted);
+}
+
+/* ---------- Chart Card ---------- */
+.chart-card{
+  background: var(--stat-surface);
+  border: 1px solid var(--stat-border);
+  border-radius: 12px;
+  box-shadow: var(--stat-shadow);
+  margin: 20px 0;
+  overflow: hidden;
+  color: var(--stat-text);
+}
+.chart-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--stat-border);
+  gap: 10px;
+}
+.chart-title{ margin:0; font-size: 18px; }
+.chart-subtitle{ margin:.25rem 0 0; color: var(--stat-muted); font-size: 13px; }
+.chart-download{
+  border:1px solid var(--stat-border);
+  background: var(--stat-surface);
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--stat-text);
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.chart-download:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--stat-shadow);
+  border-color: color-mix(in oklab, var(--stat-brand) 40%, var(--stat-border));
+}
+.chart-body{ padding: 12px 12px 0 12px; height: 420px; }
+.chart-legend{
+  display:flex; gap:24px; justify-content:center; flex-wrap:wrap;
+  padding: 8px 12px 12px;
+  color: var(--stat-muted);
+  font-size: 13px; line-height: 1.35;
+}
+.chart-legend .item{ display:flex; align-items:center; gap:8px; }
+.chart-legend .dot{
+  width:12px; height:12px; border-radius: 999px; display:inline-block;
+  outline: 1px solid color-mix(in oklab, var(--stat-border) 70%, transparent);
+  outline-offset: -1px;
+}
+.chart-meta{
+  border-top: 1px solid var(--stat-border);
+  padding: 10px 16px;
+  color: var(--stat-muted);
+  font-size: 12px;
+}
+
+/* ---------- Content Lists / Paragraphs ---------- */
+.stats-page hr{
+  border: 0; height: 1px; background: var(--stat-border);
+  margin: 1rem 0 1.2rem;
+}
+.stats-page ol{ padding-inline-start: 1.2rem; }
+.stats-page ol li{
+  margin-bottom: .9rem;
+  line-height: 1.85;
+  color: var(--stat-text);
+}
+
+/* ---------- Tables ---------- */
+.table-wrap{
+  margin: .8rem 0 1.2rem;
+  background: var(--stat-surface);
+  border: 1px solid var(--stat-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--stat-shadow);
+}
+.stats-table{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--stat-surface);
+  color: var(--stat-text);
+  font-size: .95rem;
+}
+.stats-table thead th{
+  background: linear-gradient(90deg, color-mix(in oklab, var(--stat-brand) 18%, #fff), var(--stat-surface));
+  color: var(--stat-text);
+  text-align: start;
+  padding: .8rem .9rem;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--stat-border);
+}
+.stats-table th, .stats-table td{
+  padding: .75rem .9rem;
+  border-bottom: 1px solid var(--stat-border);
+  vertical-align: top;
+}
+.stats-table tbody tr:hover{
+  background: color-mix(in oklab, var(--stat-brand-2) 12%, var(--stat-surface));
+}
+.stats-note{
+  color: var(--stat-muted);
+  font-size: .9rem;
+  padding: .6rem .2rem 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px){
+  .chart-body{ height: 360px; }
+  .stats-table{ font-size: .92rem; }
+  .chart-head{ flex-direction: column; align-items: stretch; gap: .5rem; }
+  .chart-download{ align-self: flex-start; }
+}

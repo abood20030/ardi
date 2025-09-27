@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>الزراعة العمودية — أرضي</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../public/style.css">
+  <link rel="stylesheet" href="../public/theme.css">
+  <script src="../public/javascripts.js" defer></script>
+  <script src="../public/theme.js" defer></script>
+  <script>
+  (function(){
+    try{
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+<div id="splash" class="splash-screen" aria-hidden="true">
+  <img src="../public/images/logo.svg" alt="Ardi Logo">
+</div>
+<!-- ====== Header ====== -->
+<header class="site-header container" role="banner">
+  <div class="nav-surface">
+    <a class="logo" href="../index.html" aria-label="الرئيسية">
+      <img src="../public/images/logo.svg" alt="Ard أرضي">
+    </a>
+
+    <div class="main-menu">
+      <nav class="navbar" aria-label="القائمة الرئيسية">
+        <ul class="menu" role="menubar">
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="aboutus.html">عن الأمن الغذائي</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+              الزراعة <span class="caret" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li><a href="statistics.html">إحصاءات</a></li>
+              <li><a href="irrigation.html">أنظمة الري</a></li>
+              <li><a href="vertical-farming.html">الزراعة العمودية</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+              النباتات والمحاصيل <span class="caret" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li><a href="plants.html">النباتات</a></li>
+              <li><a href="crops.html">المحاصيل</a></li>
+            </ul>
+          </li>
+
+          <li><a href="desise.html">أمراض النباتات</a></li>
+          <li><a href="contactus.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+
+      <!-- زر تبديل الثيم -->
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" title="تبديل النمط">
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="sr-only">تبديل الوضع الفاتح/الداكن</span>
+      </button>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileNav" data-mobile-toggle>
+        <span class="sr-only">فتح/إغلاق القائمة</span> ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Scroll Progress Bar -->
+<div id="scrollProgress" class="scroll-progress" aria-hidden="true">
+  <div class="bar"></div>
+</div>
+
+
+<aside id="mobileNav" class="mobile-overlay" hidden aria-hidden="true">
+  <div class="mobile-sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <img src="../public/images/logo.svg" alt="Ard أرضي">
+      <div class="sheet-actions">
+        <!-- زر ثيم داخل الدروار للموبايل -->
+        <button class="theme-toggle sm" type="button" data-theme-toggle aria-pressed="false" title="تبديل النمط">🌗</button>
+        <button class="sheet-close" aria-label="إغلاق" data-mobile-close>✕</button>
+      </div>
+    </div>
+
+    <nav class="sheet-nav">
+      <a href="../index.html" class="sheet-link">الرئيسية</a>
+      <a href="aboutus.html" class="sheet-link">عن الأمن الغذائي</a>
+
+      <button class="sheet-link sheet-accordion" data-acc>الزراعة <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="statistics.html" class="sheet-sublink">إحصاءات</a>
+        <a href="irrigation.html" class="sheet-sublink">أنظمة الري</a>
+        <a href="vertical-farming.html" class="sheet-sublink">الزراعة العمودية</a>
+      </div>
+
+      <button class="sheet-link sheet-accordion" data-acc>النباتات والمحاصيل <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="plants.html" class="sheet-sublink">النباتات</a>
+        <a href="crops.html" class="sheet-sublink">المحاصيل</a>
+      </div>
+
+      <a href="desise.html" class="sheet-link">أمراض النباتات</a>
+      <a href="contactus.html" class="sheet-link">تواصل معنا</a>
+    </nav>
+
+    <img class="sheet-decor" src="../public/images/logo.svg" alt="" aria-hidden="true">
+  </div>
+</aside>
+
+<main class="container vertical-farming">
+  <section class="hero">
+    
+    <h1>الزراعة العمودية: مستقبل الزراعة الحديثة</h1>
+<img src="../public/images/../images/الزراعة العمودية.png" alt="الزراعة العمودية" width="400px" height="250px" style="border-radius: 20px;">
+
+<p class="lead">تُعد الزراعة العمودية واحدة من أبرز الابتكارات الزراعية في القرن الحادي والعشرين، إذ قدّمت حلولاً عملية لتحديات الأمن الغذائي والقيود التي تفرضها ندرة الأراضي والمياه. تعتمد هذه التقنية على زراعة النباتات في طبقات رأسية داخل هياكل أو مبانٍ مخصصة، مع استخدام إضاءة صناعية وأنظمة دقيقة للتحكم في الماء والمواد المغذية والبيئة بشكل عام.</p>
+
+
+<h2>كيف تعمل الزراعة العمودية؟</h2>
+<p>في هذا النظام يتم استبدال الحقول المفتوحة بأبراج أو رفوف متعددة الطبقات تُسمَّى أحياناً "مصاطب" أو "أبراج زراعية". تُزوَّد النباتات بإضاءة LED تحاكي طيف الشمس، وتُستخدم تقنيات الري بالتنقيط أو الري الضبابي لتوصيل الماء والمغذيات مباشرة إلى جذور النباتات بكفاءة عالية. كما تُدار درجة الحرارة والرطوبة وتدفق الهواء ونسبة ثاني أكسيد الكربون عبر أنظمة تحكم إلكترونية، مما يخلق بيئة نمو متحكم بها طوال العام.</p>
+
+
+<h2>مزايا الزراعة العمودية</h2>
+<ul class="benefits-list">
+<li>استخدام أمثل للمساحة: تسمح بإنتاج كميات كبيرة من المحاصيل في مساحات صغيرة — ميزة حاسمة في المناطق الحضرية.</li>
+<li>توفير المياه: تستهلك كميات أقل من المياه مقارنة بالزراعة التقليدية، وقد تصل نسبة التوفير إلى 70–90% في بعض الأنظمة.</li>
+<li>إنتاج مستمر: لا تعتمد على المواسم الطبيعية، فيمكن الحصول على محاصيل طازجة طوال العام.</li>
+<li>جودة أعلى: بيئة أكثر نظافة وتحكماً تعني تقليل الحاجة للمبيدات وزيادة سلامة الغذاء.</li>
+</ul>
+
+
+<h2>التطبيقات في الأردن</h2>
+<p>بالنسبة للأردن، الذي يواجه ضغوطاً على الموارد الطبيعية ومساحات زراعية محدودة، تمثل الزراعة العمودية فرصة استراتيجية لتعزيز الأمن الغذائي المحلي. يمكن استغلال الأسطح والمباني غير المستخدمة أو إنشاء وحدات زراعية حضرية بالقرب من الأسواق لتقليل تكاليف النقل وتوفير منتجات طازجة للسوق المحلي. كما تخلق هذه المشاريع فرص عمل متعلقة بالتقنية، والصيانة، وإدارة البيانات الزراعية.</p>
+
+
+<h2>التحديات والعقبات</h2>
+<p>رغم الفوائد الكبيرة، تواجه الزراعة العمودية مجموعة من التحديات: التكلفة الأولية المرتفعة لإنشاء البنية التحتية، والحاجة لكفاءات تقنية مختصة لإدارة الأنظمة، والجوانب المتعلقة بالطاقة إن لم تُدعَم بمصادر طاقة متجددة. ومع ذلك، فإن التقدم التكنولوجي، واعتماد مصادر طاقة رخيصة أو متجددة، وبرامج الدعم الحكومية أو التمويل متزايد المستوى، قد يخفضان هذه الحواجز تدريجياً.</p>
+
+  </section>
+</main>
+
+<!-- partials/footer.html -->
+<footer class="site-footer" dir="rtl">
+  <div class="footer-inner">
+    <!-- يمين: الشعار + النص -->
+    <div class="footer-brand">
+      <img src="../public/images/logo.svg" alt="Ardi Logo" class="footer-logo">
+      <div class="brand-text">
+        <div>صُنع بحب <span class="heart">❤</span> في عمّان</div>
+        <div>© 2025 جميع الحقوق محفوظة</div>
+      </div>
+    </div>
+
+    <!-- يسار: الروابط -->
+    <nav class="footer-links" aria-label="روابط الفوتر">
+      <a href="#">تعليمات الاستخدام</a>
+      <span class="dot">•</span>
+      <a href="#">حقوق النشر</a>
+      <span class="dot">•</span>
+      <a href="#">سياسة الخصوصية</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

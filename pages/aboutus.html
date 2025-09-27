@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>عن الأمن الغذائي — أرضي</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../public/style.css">
+  <link rel="stylesheet" href="../public/theme.css">
+  <script src="../public/javascripts.js" defer></script>
+  <script src="../public/theme.js" defer></script>
+  <script>
+  (function(){
+    try{
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    }catch(e){}
+  })();
+</script>
+</head>
+<body>
+<div id="splash" class="splash-screen" aria-hidden="true">
+  <img src="../public/images/logo.svg" alt="Ardi Logo">
+</div>
+<!-- ====== Header ====== -->
+<header class="site-header container" role="banner">
+  <div class="nav-surface">
+    <a class="logo" href="../index.html" aria-label="الرئيسية">
+      <img src="../public/images/logo.svg" alt="Ard أرضي">
+    </a>
+
+    <div class="main-menu">
+      <nav class="navbar" aria-label="القائمة الرئيسية">
+        <ul class="menu" role="menubar">
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="aboutus.html">عن الأمن الغذائي</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+              الزراعة <span class="caret" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li><a href="statistics.html">إحصاءات</a></li>
+              <li><a href="irrigation.html">أنظمة الري</a></li>
+              <li><a href="vertical-farming.html">الزراعة العمودية</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+              النباتات والمحاصيل <span class="caret" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li><a href="plants.html">النباتات</a></li>
+              <li><a href="crops.html">المحاصيل</a></li>
+            </ul>
+          </li>
+
+          <li><a href="desise.html">أمراض النباتات</a></li>
+          <li><a href="contactus.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+
+      <!-- زر تبديل الثيم -->
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" title="تبديل النمط">
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="sr-only">تبديل الوضع الفاتح/الداكن</span>
+      </button>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileNav" data-mobile-toggle>
+        <span class="sr-only">فتح/إغلاق القائمة</span> ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Scroll Progress Bar -->
+<div id="scrollProgress" class="scroll-progress" aria-hidden="true">
+  <div class="bar"></div>
+</div>
+
+<aside id="mobileNav" class="mobile-overlay" hidden aria-hidden="true">
+  <div class="mobile-sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <img src="../public/images/logo.svg" alt="Ard أرضي">
+      <div class="sheet-actions">
+        <!-- زر ثيم داخل الدروار للموبايل -->
+        <button class="theme-toggle sm" type="button" data-theme-toggle aria-pressed="false" title="تبديل النمط">🌗</button>
+        <button class="sheet-close" aria-label="إغلاق" data-mobile-close>✕</button>
+      </div>
+    </div>
+
+    <nav class="sheet-nav">
+      <a href="../index.html" class="sheet-link">الرئيسية</a>
+      <a href="aboutus.html" class="sheet-link">عن الأمن الغذائي</a>
+
+      <button class="sheet-link sheet-accordion" data-acc>الزراعة <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="statistics.html" class="sheet-sublink">إحصاءات</a>
+        <a href="irrigation.html" class="sheet-sublink">أنظمة الري</a>
+        <a href="vertical-farming.html" class="sheet-sublink">الزراعة العمودية</a>
+      </div>
+
+      <button class="sheet-link sheet-accordion" data-acc>النباتات والمحاصيل <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="plants.html" class="sheet-sublink">النباتات</a>
+        <a href="crops.html" class="sheet-sublink">المحاصيل</a>
+      </div>
+
+      <a href="desise.html" class="sheet-link">أمراض النباتات</a>
+      <a href="contactus.html" class="sheet-link">تواصل معنا</a>
+    </nav>
+
+    <img class="sheet-decor" src="../public/images/logo.svg" alt="" aria-hidden="true">
+  </div>
+</aside>
+
+
+<main class="container food-securityy">
+  <section class="hero">
+    <h1>عن الأمن الغذائي</h1>
+    <p class="lead">يُعرف الأمن الغذائي (Food Security) بأنه:
+"الحالة التي يتحقق فيها الحصول المادي والاقتصادي على الغذاء الكافي والآمن والمغذي لكل الناس وفي كل الأوقات،
+ بشكل يلبي احتياجاتهم الغذائية، كما يناسب أذواقهم الغذائية المختلفة ويضمن لهم حياة صحية ونشطة."</p>
+<p>ويعتمد الأمن الغذائي على أربعة مبادئ أو أبعاد رئيسية متكاملة لضمان توفر الغذاء للجميع بشكل مستدام:
+<ol>
+  <li>توافر الغذاء (Availability):
+    يعني توفر كميات كافية من الغذاء بجودة مناسبة، سواء من الإنتاج المحلي أو عن طريق الواردات أو المخزون الاحتياطي.
+  </li>
+  <li>إمكانية الوصول للغذاء (Access):
+يشير إلى قدرة الأفراد على الحصول المادي (توفر الأسواق) والاقتصادي (القدرة الشرائية) على الغذاء لتلبية احتياجاتهم الغذائية.</li>
+<li>الاستفادة من الغذاء (Utilization):
+يتعلق بكيفية استخدام الجسم للغذاء من خلال التغذية السليمة، الصحة الجيدة، ونظافة الغذاء، مما يضمن أن الغذاء المستهلك مغذٍ وآمن.</li>
+<li>استقرار الغذاء (Stability):
+يعني ضمان استدامة الأبعاد الثلاثة السابقة على مر الزمن، دون انقطاع أو تذبذب بسبب الصدمات أو الأزمات المختلفة (مثل الكوارث الطبيعية، الأزمات الاقتصادية، أو النزاعات).</li>
+</ol>
+</p>
+<hr>
+<h2>أهمية الأمن الغذائي في الأردن</h2>
+<p>يحظى موضوع الأمن الغذائي باهتمام وأولوية خاصة في الأردن، وتبرز أهميته كهم وطني لأسباب عديدة، منها:
+  <ol>
+<li>الاستقرار الاجتماعي والاقتصادي
+  <ul><li>
+    مكافحة الجوع وسوء التغذية: ضمان حصول جميع الأردنيين على غذاء كافٍ ومغذٍ يؤدي إلى تحسين الصحة العامة، خاصة بين الأطفال، مما يقلل من سوء التغذية والأمراض المرتبطة به.
+  </li>
+<li>دعم سبل العيش: يساهم تعزيز الإنتاج الزراعي والصناعات الغذائية في خلق فرص عمل في المناطق الريفية والحضرية، ويدعم دخل صغار المزارعين والمنتجين.</li>
+<li>استقرار الأسعار: السيطرة على توفر الغذاء واستقراره محليًا يساعد في حماية المستهلكين من التقلبات الحادة في الأسعار العالمية للغذاء.</li>
+</ul>
+</li>
+<li class="mt-20">التحديات البيئية والموارد المائية
+  <ul>
+    <li>ندرة المياه: يُعد الأردن من أكثر الدول التي تعاني من ندرة المياه. لذا، يتطلب تحقيق الأمن الغذائي جهوداً مضاعفة لتعظيم الاستخدام الكفؤ للموارد المائية المتاحة، واعتماد تقنيات الري الحديثة وحصاد المياه.
+ <li>التغير المناخي: مواجهة آثار التغيرات المناخية على الإنتاج الزراعي، مثل الجفاف والظواهر الجوية المتطرفة، من خلال بناء المرونة والتكيف في النظم الغذائية.
+    </ul>
+</li>
+<li class="mt-20"> الوضع الجيوسياسي وتأثير الأزمات
+  <ul>
+    <li>
+      أزمة اللجوء: يستضيف الأردن أعداداً كبيرة من اللاجئين، مما يضع ضغطاً إضافياً على الموارد وسوق الغذاء. يتطلب الأمن الغذائي في الأردن خططاً تشمل الفئات الأكثر هشاشة.
+    </li>
+    <li>اضطراب سلاسل الإمداد العالمية: كون الأردن يعتمد بشكل كبير على استيراد بعض السلع الغذائية الرئيسية (مثل الحبوب)، فإن ضمان أمنه الغذائي يحتاج إلى تنويع مصادر الاستيراد وتعزيز المخزون الاستراتيجي لحماية البلاد من اضطرابات سلاسل الإمداد العالمية.</li>
+  </ul>
+</li>
+<li class="mt-20">الإنجازات الوطنية في الأمن الغذائي
+<ul>
+  <li>
+    الاكتفاء الذاتي الجزئي: حقق الأردن اكتفاءً ذاتيًا جيدًا في بعض المنتجات مثل الخضراوات، الحليب الطازج، الدواجن، البيض، وزيت الزيتون.
+  </li>
+  <li>
+    الاستراتيجية الوطنية: أطلق الأردن الاستراتيجية الوطنية للأمن الغذائي (2021-2030)، التي تهدف إلى تعزيز القدرات الوطنية، وزيادة الإنتاجية الزراعية، وتحسين جودة وسلامة الغذاء، وبناء المَنَعة ضد المخاطر.
+  </li>
+</ul>
+</li>
+  </ol>
+</p>
+<hr>
+<h3>آليات تحقيق الأمن الغذائي في الأردن </h3>
+<p>
+  <ol class="crop-list">
+    <li>
+      زيادة كفاءة الإنتاج الزراعي: باستخدام التكنولوجيا الحديثة مثل الزراعة المائية والزراعة المستدامة.
+    </li>
+    <li>
+      تحسين إدارة المياه: من خلال مشاريع حصاد مياه الأمطار ودعم إنشاء آبار لتجميع المياه.
+    </li>
+    <li>
+      دعم صغار المزارعين: لزيادة دخلهم وإنتاجيتهم.
+    </li>
+    <li>
+      تطوير الصناعات الزراعية: لرفع القيمة المضافة للمنتجات المحلية وتعزيز تنافسيتها.
+    </li>
+    <li>
+      مراقبة سلامة الغذاء: لضمان جودة الأغذية المتوفرة في السوق.
+    </li>
+    <li>
+      بناء نظام وطني للمعلومات: لإدارة الأمن الغذائي وتقييم حالة التغذية بشكل دوري.
+    </li>
+  </ol>
+</p>
+</section>
+</main>
+
+<!-- partials/footer.html -->
+<footer class="site-footer" dir="rtl">
+  <div class="footer-inner">
+    <!-- يمين: الشعار + النص -->
+    <div class="footer-brand">
+      <img src="../public/images/logo.svg" alt="Ardi Logo" class="footer-logo">
+      <div class="brand-text">
+        <div>صُنع بحب <span class="heart">❤</span> في عمّان</div>
+        <div>© 2025 جميع الحقوق محفوظة</div>
+      </div>
+    </div>
+
+    <!-- يسار: الروابط -->
+    <nav class="footer-links" aria-label="روابط الفوتر">
+      <a href="#">تعليمات الاستخدام</a>
+      <span class="dot">•</span>
+      <a href="#">حقوق النشر</a>
+      <span class="dot">•</span>
+      <a href="#">سياسة الخصوصية</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

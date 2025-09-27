@@ -1,0 +1,121 @@
+/* أساس: المتغيرات العامة */
+:root{
+  /* خلفيات ونصوص أساسية */
+  --bg-body: #FDFDFD;
+  --bg-surface: #ffffff;
+  --text: #1f2937;
+  --text-muted: #495057;
+
+  /* حدود وظلال */
+  --border: #e5e7eb;
+  --shadow: 0 8px 20px rgba(45,106,79,0.10);
+
+  /* ألوان العلامة (الأخضر) */
+  --brand-900: #1b7d57;
+  --brand-700: #2d6a4f;
+  --brand-600: #40916c;
+  --brand-300: #95d5b2;
+  --brand-100: #e8f5ee;
+
+  /* بطاقات/رقائق/بادجات */
+  --chip-bg: #f1f8f5;
+  --chip-border: #cde9da;
+  --badge-bg: #f6fbf8;
+  --badge-border: #cde9da;
+
+  /* تدرّجات الندرة */
+  --rarity-common-fg: #1b7d57;
+  --rarity-common-border: #bfe7cf;
+  --rarity-uncommon-fg: #b26b00;
+  --rarity-uncommon-border: #ffd27a;
+  --rarity-uncommon-bg: #fff6e5;
+  --rarity-rare-fg: #b02a54;
+  --rarity-rare-border: #ffc3d1;
+  --rarity-rare-bg: #fff0f4;
+
+  /* مدخلات */
+  --input-bg: #f8fafc;
+  --input-border: #e5e7eb;
+
+  /* صور البطاقات */
+  --card-img-bg: #f8fafc;
+
+  /* عناصر الهيدر/الفوتر */
+  --nav-surface-bg: var(--bg-surface);
+  --footer-bg: var(--bg-surface);
+}
+
+/* الوضع الداكن */
+:root[data-theme="dark"]{
+  --bg-body: #0e1215;
+  --bg-surface: #12171b;
+  --text: #e5eef5;
+  --text-muted: #b7c4cf;
+
+  --border: #25313b;
+  --shadow: 0 10px 22px rgba(0,0,0,0.35);
+
+  --brand-900: #53e0b1;
+  --brand-700: #3fd09f;
+  --brand-600: #40c69a;
+  --brand-300: #2b8a6e;
+  --brand-100: #0f1b16;
+
+  --chip-bg: #12231b;
+  --chip-border: #1f3a2d;
+  --badge-bg: #13261e;
+  --badge-border: #1f3a2d;
+
+  --rarity-common-fg: #5fd0a4;
+  --rarity-common-border: #285c49;
+  --rarity-uncommon-fg: #ffce73;
+  --rarity-uncommon-border: #6d5220;
+  --rarity-uncommon-bg: #2b220f;
+  --rarity-rare-fg: #ff7aa4;
+  --rarity-rare-border: #5c293a;
+  --rarity-rare-bg: #2b0f18;
+
+  --input-bg: #0f151a;
+  --input-border: #26323d;
+
+  --card-img-bg: #0f151a;
+
+  --nav-surface-bg: #0f1418;
+  --footer-bg: #0f1418;
+}
+
+/* تطبيق المتغيرات على العناصر الأساسية */
+html, body{
+  background: var(--bg-body);
+  color: var(--text);
+}
+
+.site-footer{
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+}
+
+/* عناصر عامة */
+input[type="search"], select{
+  background: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text);
+}
+
+/* زر تبديل الثيم */
+.theme-toggle{
+  margin-inline-start: .75rem;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  color: var(--brand-700);
+  padding: .5rem .7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s;
+}
+.theme-toggle:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+.theme-toggle.sm{ padding: .35rem .55rem; }
+.theme-toggle .icon-sun{ display: inline; }
+.theme-toggle .icon-moon{ display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun{ display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon{ display: inline; }

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>الرئيسية — أرضي</title>
+
+  <!-- تطبيق الثيم قبل الرسم لمنع وميض خاطئ -->
+  <script>
+    (function(){
+      try{
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      }catch(e){}
+    })();
+  </script>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+
+  <!-- ملفات CSS -->
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" href="public/theme.css">
+
+  <!-- ملفات JS -->
+  <script src="public/javascripts.js" defer></script>
+  <script src="public/theme.js" defer></script>
+</head>
+<body>
+<div id="splash" class="splash-screen" aria-hidden="true">
+  <img src="public/images/logo.svg" alt="Ardi Logo">
+</div>
+<!-- ====== Header ====== -->
+<header class="site-header container" role="banner">
+  <div class="nav-surface">
+    <a class="logo" href="index.html" aria-label="الرئيسية">
+      <img src="public/images/logo.svg" alt="Ard أرضي">
+    </a>
+
+    <div class="main-menu">
+      <nav class="navbar" aria-label="القائمة الرئيسية">
+        <ul class="menu" role="menubar">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pages/aboutus.html">عن الأمن الغذائي</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+              الزراعة <span class="caret" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li><a href="pages/statistics.html">إحصاءات</a></li>
+              <li><a href="pages/irrigation.html">أنظمة الري</a></li>
+              <li><a href="pages/vertical-farming.html">الزراعة العمودية</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+              النباتات والمحاصيل <span class="caret" aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li><a href="pages/plants.html">النباتات</a></li>
+              <li><a href="pages/crops.html">المحاصيل</a></li>
+            </ul>
+          </li>
+
+          <li><a href="pages/desise.html">أمراض النباتات</a></li>
+          <li><a href="pages/contactus.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+
+      <!-- زر تبديل الثيم -->
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" title="تبديل النمط">
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="sr-only">تبديل الوضع الفاتح/الداكن</span>
+      </button>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileNav" data-mobile-toggle>
+        <span class="sr-only">فتح/إغلاق القائمة</span> ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Scroll Progress Bar -->
+<div id="scrollProgress" class="scroll-progress" aria-hidden="true">
+  <div class="bar"></div>
+</div>
+
+<!-- ====== Mobile Nav ====== -->
+<aside id="mobileNav" class="mobile-overlay" hidden aria-hidden="true">
+  <div class="mobile-sheet" role="dialog" aria-modal="true" aria-label="القائمة">
+    <div class="sheet-head">
+      <img src="public/images/logo.svg" alt="Ardi أرضي">
+      <div class="sheet-actions">
+        <!-- زر الثيم للموبايل -->
+        <button class="theme-toggle sm" type="button" data-theme-toggle aria-pressed="false" title="تبديل النمط">🌗</button>
+        <button class="sheet-close" aria-label="إغلاق" data-mobile-close>✕</button>
+      </div>
+    </div>
+
+    <nav class="sheet-nav">
+      <a href="index.html" class="sheet-link">الرئيسية</a>
+      <a href="pages/aboutus.html" class="sheet-link">عن الأمن الغذائي</a>
+
+      <button class="sheet-link sheet-accordion" data-acc>الزراعة <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="pages/statistics.html" class="sheet-sublink">إحصاءات</a>
+        <a href="pages/irrigation.html" class="sheet-sublink">أنظمة الري</a>
+        <a href="pages/vertical-farming.html" class="sheet-sublink">الزراعة العمودية</a>
+      </div>
+
+      <button class="sheet-link sheet-accordion" data-acc>النباتات والمحاصيل <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="pages/plants.html" class="sheet-sublink">النباتات</a>
+        <a href="pages/crops.html" class="sheet-sublink">المحاصيل</a>
+      </div>
+
+      <a href="pages/desise.html" class="sheet-link">أمراض النباتات</a>
+      <a href="pages/contactus.html" class="sheet-link">تواصل معنا</a>
+    </nav>
+
+    <img class="sheet-decor" src="public/images/logo.svg" alt="" aria-hidden="true">
+  </div>
+</aside>
+
+<!-- ====== Main ====== -->
+<main class="page-content">
+  <!-- Hero -->
+  <section class="home-hero section container">
+    <div class="section-content">
+      <h1 class="title">نحو مستقبل آمن غذائيًا ومستدام</h1>
+      <p class="lead">
+        نسعى لتعزيز الوعي بأهمية الأمن الغذائي وتوفير موارد عملية للمزارعين والباحثين.
+      </p>
+    </div>
+    <img class="hero-img" src="public/images/hero-img.png" alt="Hero Image" max-width="604px" />
+  </section>
+
+  <!-- الأمن الغذائي -->
+  <section class="section food-security">
+    <div class="container food-security-container">
+      <div class="content">
+        <h2 class="white-title">الأمن الغذائي</h2>
+        <p class="lead">
+          يعني أن يكون الطعام متوفرًا للجميع بشكل كافٍ، آمن وصحي، وفي أي وقت.
+          أي أنه ضمن أن كل شخص يحصل على ما يحتاجه من غذاء صحي يساعده على العيش النشط.
+          تحقيق الأمن الغذائي يقلل من الجوع، يحسن صحة الناس ويعزز المجتمعات والاقتصاد.
+        </p>
+      </div>
+      
+      <img class="food-security-img" src="public/images/food-security.png" alt="food">
+    </div>
+  </section>
+
+  <!-- الكروت -->
+  <section class="section">
+    <div class="categories">
+      <div class="item">
+        <img src="public/images/Agriculture.png" alt="agriculture">
+        <h3>الزراعة</h3>
+      </div>
+      <div class="item">
+        <img src="public/images/plants.png" alt="plants">
+        <h3>النباتات والمحاصيل</h3>
+      </div>
+      <div class="item">
+        <img src="public/images/disease.png" alt="disease">
+        <h3>أمراض النباتات</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- الإحصائيات -->
+  <section class="section statistics">
+    <div class="container statistics-container">
+      <div class="content">
+        <h2 class="white-title">إحصائيات</h2>
+        <p class="lead white">
+          توفر هذه الإحصائيات نظرة عامة على الوضع الحالي للأمن الغذائي في الأردن، مما يساعد في فهم التحديات والفرص المتاحة لتحسين الوضع.
+        </p>
+      </div>
+      <div class="stats-container">
+        <div class="stat">
+          <img src="public/images/chart.png" alt="stat1" width="70" height="70">
+          <h3>56%</h3>
+          <p>نسبة الأراضي المزروعة</p>
+        </div>
+        <div class="stat">
+          <img src="public/images/chart.png" alt="stat2" width="70" height="70">
+          <h3>23%</h3>
+          <p>نسبة الهدر الغذائي</p>
+        </div>
+        <div class="stat">
+          <img src="public/images/chart.png" alt="stat3" width="70" height="70">
+          <h3>31%</h3>
+          <p>نسبة الاكتفاء الذاتي</p>
+        </div>
+      </div>
+  </section>
+</main>
+
+<!-- ====== Footer ====== -->
+<footer class="site-footer" dir="rtl">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="public/images/logo.svg" alt="Ardi Logo" class="footer-logo">
+      <div class="brand-text">
+        <div>صُنع بحب <span class="heart">❤</span> في عمّان</div>
+        <div>© 2025 جميع الحقوق محفوظة</div>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="روابط الفوتر">
+      <a href="#">تعليمات الاستخدام</a>
+      <span class="dot">•</span>
+      <a href="#">حقوق النشر</a>
+      <span class="dot">•</span>
+      <a href="#">سياسة الخصوصية</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

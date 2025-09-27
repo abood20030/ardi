@@ -1,0 +1,66 @@
+<header class="site-header container" role="banner">
+  <div class="nav-surface">
+    <a class="logo" href="../index.html" aria-label="الرئيسية">
+      <img src="../public/images/logo.svg" alt="Ard أرضي">
+    </a>
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="../index.html">الرئيسية</a></li>
+        <li><a href="aboutus.html">عن الأمن الغذائي</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+            الزراعة <span class="caret">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="statistics.html">إحصاءات</a></li>
+            <li><a href="irrigation.html">أنظمة الري</a></li>
+            <li><a href="vertical-farming.html">الزراعة العمودية</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dd-toggle>
+            النباتات والمحاصيل <span class="caret">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="plants.html">النباتات</a></li>
+            <li><a href="crops.html">المحاصيل</a></li>
+          </ul>
+        </li>
+        <li><a href="desise.html">أمراض النباتات</a></li>
+        <li><a href="contactus.html">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobileNav" data-mobile-toggle><span class="sr-only">فتح/إغلاق</span>☰</button>
+  </div>
+</header>
+
+<aside id="mobileNav" class="mobile-overlay" hidden aria-hidden="true">
+  <div class="mobile-sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <img src="../public/images/logo.svg" alt="Ard أرضي">
+      <button class="sheet-close" aria-label="إغلاق" data-mobile-close>✕</button>
+    </div>
+    <nav class="sheet-nav">
+      <a href="../index.html" class="sheet-link">الرئيسية</a>
+      <a href="aboutus.html" class="sheet-link">عن الأمن الغذائي</a>
+
+      <button class="sheet-link sheet-accordion" data-acc>الزراعة <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="statistics.html" class="sheet-sublink">إحصاءات</a>
+        <a href="irrigation.html" class="sheet-sublink">أنظمة الري</a>
+        <a href="vertical-farming.html" class="sheet-sublink">الزراعة العمودية</a>
+      </div>
+
+      <button class="sheet-link sheet-accordion" data-acc>النباتات والمحاصيل <span class="acc-caret">▾</span></button>
+      <div class="acc-panel" hidden>
+        <a href="plants.html" class="sheet-sublink">النباتات</a>
+        <a href="crops.html" class="sheet-sublink">المحاصيل</a>
+      </div>
+      <a href="desise.html" class="sheet-link">أمراض النباتات</a>
+      <a href="contactus.html" class="sheet-link">تواصل معنا</a>
+    </nav>
+    <img class="sheet-decor" src="../public/images/logo.svg" alt="" aria-hidden="true">
+  </div>
+</aside>

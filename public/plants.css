@@ -1,0 +1,117 @@
+/* ======= Plants – Controls & Grid (RTL/Green theme) ======= */
+.plants .hero {
+  padding: 2rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(45, 106, 79, 0.1);
+}
+
+/* نفس ستايل عناوينك */
+.plants h1 { font-size: 2rem; color: #2d6a4f; text-align: center; margin-bottom: 1.5rem; position: relative; }
+.plants h2, .plants h3 { color: #40916c; margin-top: 2rem; border-right: 4px solid #95d5b2; padding-right: .5rem; }
+.plants p.lead { font-size: 1.05rem; color: #495057; line-height: 1.9; background: #f1f8f5; padding: 1rem 1.2rem; border-right: 4px solid #2d6a4f; border-radius: 6px; }
+.plants p.lead.slim { margin-top: .5rem; background: #f6fbf8; }
+
+/* شريط أدوات البحث */
+.plants-controls{
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(45,106,79,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.plants-controls .control-top{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 992px){ .plants-controls{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px){ .plants-controls{ grid-template-columns: 1fr; } }
+
+.plants-controls .label{
+  display:block; font-size:.95rem; color:#2d6a4f; margin-bottom:.4rem; font-weight:600;
+}
+.plants-controls input[type="search"],
+.plants-controls select{
+  width:100%;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:.8rem .9rem;
+  font-size:.95rem;
+  color:#222;
+  outline:none;
+}
+.plants-controls select[multiple]{ min-height: 150px; }
+.plants-controls .chip-btn,
+.plants-controls .reset-btn{
+  margin-top:.5rem;
+  background:#f1f8f5;
+  color:#2d6a4f;
+  border:1px solid #cde9da;
+  border-radius:999px;
+  padding:.45rem .8rem;
+  cursor:pointer;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.plants-controls .chip-btn:hover,
+.plants-controls .reset-btn:hover{
+  background:#e8f5ee; box-shadow:0 6px 12px rgba(64,145,108,.12); transform: translateY(-1px);
+}
+.plants-controls .sort-control{ display:flex; align-items:end; gap:.6rem; }
+
+.chips{
+  display:flex; flex-wrap:wrap; gap:.6rem; margin: .9rem 0 .2rem;
+}
+.chip{
+  display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .75rem;
+  background:#f1f8f5; border:1px solid #cde9da; color:#2d6a4f; border-radius:999px; font-size:.9rem;
+}
+.chip button{ all:unset; cursor:pointer; color:#1b7d57; font-weight:700; }
+
+.results-bar{ color:#495057; margin:.4rem 0 1rem; }
+
+/* شبكة البطاقات (مناسبة لستايلك الحالي) */
+.cards-group{
+  display:flex; flex-wrap:wrap; gap:1.5rem; margin-top: 1rem;
+}
+.cards-group .card{
+  flex:1 1 calc(25% - 1.5rem);
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:1rem;
+  text-align:center;
+  transition: transform .2s, box-shadow .25s, border-color .2s;
+}
+.cards-group .card:hover{
+  transform:translateY(-4px);
+  box-shadow: 0 10px 22px rgba(45,106,79,.12);
+  border-color:#cde9da;
+}
+.cards-group .card-img{
+  width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:.75rem; background:#f8fafc;
+}
+.cards-group .card-title{ margin:.3rem 0 .2rem; font-size:1.05rem; color:#2d6a4f;text-align: start; }
+.cards-group .card-desc{ color:#333; line-height:1.6; font-size:.95rem; margin:.4rem 0 .6rem;text-align: start; }
+
+.card-meta{ display:flex; gap:.5rem; justify-content:flex-start; margin-bottom:.4rem; flex-wrap:wrap; }
+.badge{
+  display:inline-block; padding:.25rem .55rem; border-radius:999px; font-size:.82rem; border:1px solid #cde9da; color:#1b7d57; background:#f6fbf8;
+}
+.badge.rarity[data-rarity="شائع"]{ color:#1b7d57; border-color:#bfe7cf; }
+.badge.rarity[data-rarity="غير شائع"]{ color:#b26b00; border-color:#ffd27a; background:#fff6e5; }
+.badge.rarity[data-rarity="نادر"]{ color:#b02a54; border-color:#ffc3d1; background:#fff0f4; }
+
+.card-types{ display:flex; flex-wrap:wrap; gap:.4rem; justify-content:flex-start; }
+.card-types .type-pill{
+  padding:.3rem .5rem; font-size:.8rem; border-radius:8px; background:#f8fafc; border:1px dashed #e5e7eb; color:#476b5b;
+}
+
+/* رسبونسف */
+@media (max-width: 992px){ .cards-group .card{ flex:1 1 calc(50% - 1rem); } }
+@media (max-width: 560px){ .cards-group .card{ flex:1 1 100%; } }
