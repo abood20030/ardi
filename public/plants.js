@@ -15,7 +15,7 @@ const PLANTS = [
     type: "حبوب",
     rarity: "شائع",
     types: ["بسمتي", "جابونيكا", "إنديكا"],
-    img: "../public/images/rice.JPG",
+    img: "../public/images/rice.jpg",
     desc: "محب للماء؛ أنواعه تتنوع بين طويل الحبة العطري واللزج القصير."
   },
   {
